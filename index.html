@@ -180,7 +180,10 @@ h2{font-family:var(--display);text-transform:uppercase;font-size:clamp(34px,4.6v
 .krow{display:flex;gap:16px;padding:13px 0;align-items:center}
 .krow + .krow{border-top:2px dashed var(--paper-line)}
 .knum{flex:none;font-family:var(--display);font-size:15px;background:var(--white);border:2.5px solid var(--ink);border-radius:6px;width:34px;height:34px;display:grid;place-items:center}
-.krow h3{font-size:19px;font-weight:800;line-height:1.25}
+.krow h3{font-size:19px;font-weight:800;line-height:1.25;flex:1;min-width:0}
+.kval{font-family:var(--mono);font-weight:600;font-size:15.5px;color:var(--blue);white-space:nowrap}
+.ktotal{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:3px solid var(--ink);margin-top:6px;padding:15px 0 12px;font-weight:800;font-size:16px}
+.ktotal .tv b{font-family:var(--mono);font-weight:600;font-size:19px;background:var(--yellow);padding:1px 7px}
 .kcta{text-align:center;margin-top:30px}
 .kcta .micro2{margin-top:14px}
 @media(max-width:560px){.kit{padding:12px 18px 8px}.kstamp{right:12px}}
@@ -435,6 +438,14 @@ h1,h2,.d2,.logo,.co-big,.meter-g,.fstat .fn,.knum,.rule .num,.quote::before{font
   </section>
 
 
+  <section class="punch" id="stop">
+    <div class="wrap">
+      <h2 class="d">Stop doing <span class="strike b">sales</span></h2>
+      <div class="excuses" aria-hidden="true"><span>“Slow month”</span><span>“Waiting on referrals”</span><span>“Next quarter for sure”</span></div>
+      <div class="quote">Running under capacity is how you <b>miss payroll</b>, <b>lose profit</b>, and <b>lay good people off.</b><span class="qline2">Operating at 100% capacity is how you <span class="under">grow</span></span></div>
+    </div>
+  </section>
+
   <section class="grade on-paper" id="grade">
     <div class="wrap">
       <div>
@@ -451,13 +462,13 @@ h1,h2,.d2,.logo,.co-big,.meter-g,.fstat .fn,.knum,.rule .num,.quote::before{font
           <rect x="28" y="54" width="72" height="24" rx="5" fill="#FFFFFF" stroke="#0E1B3A" stroke-width="3"/>
           <text x="64" y="70" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11" font-weight="800" fill="#0E1B3A" letter-spacing=".5">YOUR AUDIT</text>
         </svg>
-        <div class="kstamp">$2,500 value · free</div>
         <div class="kh">What's inside</div>
-        <div class="krow"><div class="knum">1</div><h3>30 custom ad hooks</h3></div>
-        <div class="krow"><div class="knum">2</div><h3>Your crafted core offer</h3></div>
-        <div class="krow"><div class="knum">3</div><h3>Your customer avatar</h3></div>
-        <div class="krow"><div class="knum">4</div><h3>'Money Left on the Table' report</h3></div>
-        <div class="krow"><div class="knum">5</div><h3>90-Day Ad Campaign Blueprint</h3></div>
+        <div class="krow"><div class="knum">1</div><h3>30 custom ad hooks</h3><span class="kval">$750</span></div>
+        <div class="krow"><div class="knum">2</div><h3>Your crafted core offer</h3><span class="kval">$600</span></div>
+        <div class="krow"><div class="knum">3</div><h3>Your customer avatar</h3><span class="kval">$300</span></div>
+        <div class="krow"><div class="knum">4</div><h3>'Money Left on the Table' report</h3><span class="kval">$350</span></div>
+        <div class="krow"><div class="knum">5</div><h3>90-Day Ad Campaign Blueprint</h3><span class="kval">$500</span></div>
+        <div class="ktotal"><span>Total value</span><span class="tv"><b>$2,500</b> · yours free</span></div>
       </div>
       <div class="kcta">
         <a class="btn btn-y" href="#">Start the 5 minute questionnaire</a>
@@ -465,13 +476,6 @@ h1,h2,.d2,.logo,.co-big,.meter-g,.fstat .fn,.knum,.rule .num,.quote::before{font
     </div>
   </section>
 
-  <section class="punch" id="stop">
-    <div class="wrap">
-      <h2 class="d">Stop doing <span class="strike b">sales</span></h2>
-      <div class="excuses" aria-hidden="true"><span>“Slow month”</span><span>“Waiting on referrals”</span><span>“Next quarter for sure”</span></div>
-      <div class="quote">Running under capacity is how you <b>miss payroll</b>, <b>lose profit</b>, and <b>lay good people off.</b><span class="qline2">Operating at 100% capacity is how you <span class="under">grow</span></span></div>
-    </div>
-  </section>
 
 
   <section class="who" id="who">
