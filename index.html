@@ -412,24 +412,37 @@ h1,h2,.d2,.logo,.co-big,.meter-g,.fstat .fn,.knum,.rule .num,.quote::before{font
 .gseal .gk{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
 .guar .lead b{background:var(--yellow);padding:0 4px}
 
+
+/* dream outcome */
+.dream{background:var(--blue);color:var(--white);border-bottom:3px solid var(--ink);text-align:center}
+.dream .wrap{display:block}
+.dream h2{color:var(--white)}
+.dream h2 i{font-style:normal;color:var(--yellow)}
+.dream .lead{color:#D9E4FB}
+.dchips{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:26px}
+.dchips span{background:var(--yellow);color:var(--ink);border:2.5px solid var(--ink);border-radius:10px;padding:9px 18px;font-weight:800;font-size:15px;box-shadow:var(--sh-pop)}
+.dchips span:nth-child(1){transform:rotate(-2deg)}
+.dchips span:nth-child(2){transform:rotate(1.5deg)}
+.dchips span:nth-child(3){transform:rotate(-1deg)}
+
 </style>
 
 <div class="bar" role="region" aria-label="offer">
-  <span>5 minutes of questions = $2,500 in value for free.</span>
-  <a class="chip" href="#grade">Get your free audit</a>
+  <span>5 minutes of questions = your Full Calendar Blueprint, free.</span>
+  <a class="chip" href="#grade">Get your Blueprint</a>
 </div>
 
 <header>
   <div class="wrap nav">
     <a class="logo d" href="#"><b>booked</b><span>.marketing</span></a>
     <nav aria-label="primary">
-      <a href="#grade">The Free Audit</a>
+      <a href="#grade">The Blueprint</a>
       <a href="#who">Who it's for</a>
       <a href="#calculator">The Math</a>
       <a href="#rules">House Rules</a>
       <a href="#about">About</a>
     </nav>
-    <a class="btn btn-y" href="#grade">Get your free audit</a>
+    <a class="btn btn-y" href="#grade">Get your free Blueprint</a>
   </div>
 </header>
 
@@ -470,12 +483,21 @@ h1,h2,.d2,.logo,.co-big,.meter-g,.fstat .fn,.knum,.rule .num,.quote::before{font
     </div>
   </section>
 
+  <section class="dream" id="dream">
+    <div class="wrap">
+      <div class="kicker">The dream outcome</div>
+      <h2>Booked solid, prices up, a <i>waitlist</i> at the door</h2>
+      <p class="lead">Running at 100% changes the job. You stop chasing work and start choosing it.</p>
+      <div class="dchips"><span>Choose your clients</span><span>Raise your rates</span><span>Plan months ahead</span></div>
+    </div>
+  </section>
+
   <section class="grade on-paper" id="grade">
     <div class="wrap">
       <div>
-        <div class="kicker">The free audit</div>
-        <h2>5 minutes of questions = <span class="under">$2,500 in value</span> for free</h2>
-        <p class="lead">Answer a short questionnaire. We build the full audit and send it back free.</p>
+        <div class="kicker">The free Blueprint</div>
+        <h2>5 minutes of questions = your <span class="under">Full Calendar Blueprint</span>, free</h2>
+        <p class="lead">Answer a short questionnaire. We build your Blueprint, $2,500 of custom work, and send it back free.</p>
       </div>
       <div class="kit">
         <svg class="kfolder" viewBox="0 0 128 104" aria-hidden="true">
@@ -484,14 +506,14 @@ h1,h2,.d2,.logo,.co-big,.meter-g,.fstat .fn,.knum,.rule .num,.quote::before{font
           <rect x="10" y="26" width="108" height="70" rx="7" fill="#1E4CB0" stroke="#0E1B3A" stroke-width="3.5"/>
           <rect x="10" y="36" width="108" height="60" rx="7" fill="#2B63D9" stroke="#0E1B3A" stroke-width="3.5"/>
           <rect x="28" y="54" width="72" height="24" rx="5" fill="#FFFFFF" stroke="#0E1B3A" stroke-width="3"/>
-          <text x="64" y="70" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11" font-weight="800" fill="#0E1B3A" letter-spacing=".5">YOUR AUDIT</text>
+          <text x="64" y="70" text-anchor="middle" font-family="Archivo, sans-serif" font-size="9.5" font-weight="800" fill="#0E1B3A" letter-spacing=".5">YOUR BLUEPRINT</text>
         </svg>
         <div class="kh">What's inside</div>
         <div class="krow"><div class="knum">1</div><h3>30 custom ad hooks</h3><span class="kval">$750</span></div>
         <div class="krow"><div class="knum">2</div><h3>Your crafted core offer</h3><span class="kval">$600</span></div>
         <div class="krow"><div class="knum">3</div><h3>Your customer avatar</h3><span class="kval">$300</span></div>
         <div class="krow"><div class="knum">4</div><h3>'Money Left on the Table' report</h3><span class="kval">$350</span></div>
-        <div class="krow"><div class="knum">5</div><h3>90-Day Ad Campaign Blueprint</h3><span class="kval">$500</span></div>
+        <div class="krow"><div class="knum">5</div><h3>90-Day Campaign Roadmap</h3><span class="kval">$500</span></div>
         <div class="ktotal"><span>Total value</span><span class="tv"><b>$2,500</b> · yours free</span></div>
       </div>
       <div class="kcta">
@@ -590,7 +612,7 @@ h1,h2,.d2,.logo,.co-big,.meter-g,.fstat .fn,.knum,.rule .num,.quote::before{font
     <div class="wrap">
       <div class="kicker">What working with us looks like</div>
       <h2>You answer the phone. <span class="under">We run the machine</span></h2>
-      <p class="lead">One goal behind all of it: your calendar full, your prices rising, and a waitlist forming behind them.</p>
+      <p class="lead">Four jobs, one team, and none of it on your plate.</p>
       <div class="steps">
         <div class="step"><div class="knum">1</div><h3>Create</h3><p>Scroll-stopping content made for your business. Hooks, scripts, and ads: our craft, your voice.</p></div>
         <div class="step"><div class="knum">2</div><h3>Launch</h3><p>Performance campaigns across every channel your customers scroll.</p><div class="platforms"><span>TikTok</span><span>Instagram</span><span>Facebook</span><span>YouTube</span><span>Reddit</span><span>LinkedIn</span></div></div>
@@ -605,7 +627,7 @@ h1,h2,.d2,.logo,.co-big,.meter-g,.fstat .fn,.knum,.rule .num,.quote::before{font
       <div class="gseal" aria-hidden="true"><span class="gn">90</span><span class="gk">Day guarantee</span></div>
       <div class="kicker">The guarantee</div>
       <h2>More revenue in 90 days, or we <span class="under">work free</span> until you get it</h2>
-      <p class="lead">That's the whole deal, and it goes in your contract. If your revenue is not up within 90 days of launch, <b>you stop paying and we keep working</b> until it is.</p>
+      <p class="lead">That's the whole deal. If your revenue is not up within 90 days of launch, <b>you stop paying and we keep working</b> until it is.</p>
     </div>
   </section>
 
@@ -664,16 +686,16 @@ h1,h2,.d2,.logo,.co-big,.meter-g,.fstat .fn,.knum,.rule .num,.quote::before{font
       </svg>
       <div class="kicker">Before you go</div>
       <h2>Don't leave <span class="under">empty handed</span></h2>
-      <p class="lead">Five minutes of questions gets you all of it: <b>30 ad hooks</b>, <b>your core offer</b>, <b>your customer avatar</b>, the <b>'Money Left on the Table' report</b>, and a <b>90-day blueprint</b>. $2,500 of work, free, yours to keep either way. The end goal is bigger: <b>a calendar that stays full</b>.</p>
-      <a class="btn btn-ink" href="#grade">Claim your free audit</a>
+      <p class="lead">Five minutes of questions gets you all of it: <b>30 ad hooks</b>, <b>your core offer</b>, <b>your customer avatar</b>, the <b>'Money Left on the Table' report</b>, and a <b>90-day roadmap</b>. $2,500 of work, free, yours to keep either way. The end goal is bigger: <b>a calendar that stays full</b>.</p>
+      <a class="btn btn-ink" href="#grade">Claim your free Blueprint</a>
     </div>
   </section>
 
   <section class="final">
     <div class="wrap">
       <div class="d2">Your business is 74% booked.<br>We get <span class="pct">you</span> the last <span class="pct">26%</span></div>
-      <p>Full calendar, full crews, maximum profit on the costs you already pay. The audit is free.</p>
-      <a class="btn btn-y" href="#grade">Get your free audit</a>
+      <p>Full calendar, full crews, maximum profit on the costs you already pay. The Blueprint is free.</p>
+      <a class="btn btn-y" href="#grade">Get your free Blueprint</a>
     </div>
   </section>
 </main>
@@ -772,6 +794,6 @@ h1,h2,.d2,.logo,.co-big,.meter-g,.fstat .fn,.knum,.rule .num,.quote::before{font
 <footer>
   <div class="wrap">
     <span><b style="color:var(--white)">booked</b>.marketing · a Gamified LLC company</span>
-    <span><a href="#rules">House rules</a> · <a href="#about">About</a> · <a href="#grade">Free audit</a></span>
+    <span><a href="#rules">House rules</a> · <a href="#about">About</a> · <a href="#grade">Free Blueprint</a></span>
   </div>
 </footer>
