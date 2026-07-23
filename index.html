@@ -194,7 +194,7 @@ h2{font-family:var(--display);text-transform:uppercase;font-size:clamp(34px,4.6v
 .calc-sec{background:var(--paper);border-bottom:3px solid var(--ink)}
 .calc-sec .wrap{display:block;text-align:center}
 .calc{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;max-width:1020px;margin:44px auto 0;text-align:left;align-items:stretch}
-.calc-in{background:var(--white);border:3px solid var(--ink);border-radius:var(--r-md);box-shadow:var(--sh-card);padding:26px 30px}
+.calc-in{background:var(--white);border:3px solid var(--ink);border-radius:var(--r-md);box-shadow:var(--sh-card);padding:26px 30px;display:flex;flex-direction:column;justify-content:space-evenly}
 .cfield{padding:15px 0}
 .cfield + .cfield{border-top:2px dashed var(--paper-line)}
 .clabel{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-weight:800;font-size:15.5px}
@@ -547,38 +547,30 @@ h1,h2,.d2,.logo,.co-big,.meter-g,.fstat .fn,.knum,.rule .num,.quote::before{font
     <div class="wrap">
       <div class="kicker">The gut-punch math</div>
       <h2>Money left <span class="under">on the table</span></h2>
-      <p class="lead">Find out how much money your business is leaving on the table. Set the four sliders to your numbers and the total updates live.</p>
+      <p class="lead">Find out how much money your business is leaving on the table. Set the three sliders to your numbers and the total updates live.</p>
       <div class="calc">
         <div class="calc-in">
           <div class="dragme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="M8 8l-4 4 4 4"/><path d="M16 8l4 4-4 4"/></svg>Drag the sliders</div>
           <div class="cfield">
             <div class="clabel"><span>Average sale price</span><b id="v-avg">$2,000</b></div>
-            <div class="chint">What one client, job, or order is worth to your business on average</div>
             <input type="range" id="r-avg" min="500" max="20000" step="250" value="2000" aria-label="Average sale price in dollars">
             <div class="nudge" aria-hidden="true"></div>
           </div>
           <div class="cfield">
-            <div class="clabel"><span>Sales you make in a day right now</span><b id="v-cur">3</b></div>
-            <div class="chint">Your normal day today</div>
-            <input type="range" id="r-cur" min="1" max="25" step="1" value="3" aria-label="Sales you make in a day right now">
+            <div class="clabel"><span>Sales you make in a month</span><b id="v-cur">60</b></div>
+            <input type="range" id="r-cur" min="5" max="300" step="5" value="60" aria-label="Sales you make in a month">
           </div>
           <div class="cfield">
-            <div class="clabel"><span>Sales you could handle at 100% full</span><b id="v-cap">5</b></div>
-            <div class="chint">Your ceiling: crew, chairs, stock, hours. Always higher than today's number.</div>
-            <input type="range" id="r-cap" min="1" max="25" step="1" value="5" aria-label="Sales you could handle at 100 percent full">
-          </div>
-          <div class="cfield">
-            <div class="clabel"><span>Days open per month</span><b id="v-days">22</b></div>
-            <div class="chint">Working days you could be selling</div>
-            <input type="range" id="r-days" min="10" max="31" step="1" value="22" aria-label="Days open per month">
+            <div class="clabel"><span>Sales you could handle in a month</span><b id="v-cap">105</b></div>
+            <input type="range" id="r-cap" min="5" max="300" step="5" value="105" aria-label="Sales you could handle in a month">
           </div>
         </div>
         <div class="calc-out" aria-live="polite">
           <div class="co-k">Walking out the door every month</div>
-          <div class="co-big" id="o-mo">$88,000</div>
-          <div class="co-yr">that's <b id="o-yr">$1,056,000</b> a year</div>
-          <div class="co-math" id="o-math">(5 - 3 a day) × $2,000 × 22 days</div>
-          <div class="co-note" id="o-note"><b>44</b> missed sales a month, on costs you already pay</div>
+          <div class="co-big" id="o-mo">$90,000</div>
+          <div class="co-yr">that's <b id="o-yr">$1,080,000</b> a year</div>
+          <div class="co-math" id="o-math">(105 - 60 a month) × $2,000</div>
+          <div class="co-note" id="o-note"><b>45</b> missed sales a month, on costs you already pay</div>
           <a class="btn btn-y" href="#grade">Find out how we fill it</a>
         </div>
       </div>
@@ -734,23 +726,23 @@ h1,h2,.d2,.logo,.co-big,.meter-g,.fstat .fn,.knum,.rule .num,.quote::before{font
   function sync(changed){
     var cur=$('r-cur'), cap=$('r-cap');
     if(+cur.value >= +cap.value){
-      if(changed==='r-cur'){ cap.value=Math.min(+cur.value+1, +cap.max); }
-      else{ cur.value=Math.max(+cap.value-1, +cur.min); }
-      if(+cur.value >= +cap.value){ cur.value=+cap.value-1; }
+      if(changed==='r-cur'){ cap.value=Math.min(+cur.value+5, +cap.max); }
+      else{ cur.value=Math.max(+cap.value-5, +cur.min); }
+      if(+cur.value >= +cap.value){ cur.value=+cap.value-5; }
       paint(cur); paint(cap);
     }
   }
   function calc(){
-    var cur=+$('r-cur').value, cap=+$('r-cap').value, avg=+$('r-avg').value, days=+$('r-days').value;
+    var cur=+$('r-cur').value, cap=+$('r-cap').value, avg=+$('r-avg').value;
     $('v-cur').textContent=cur; $('v-cap').textContent=cap;
-    $('v-avg').textContent=fmt(avg); $('v-days').textContent=days;
-    var gap=Math.max(0,cap-cur), missed=gap*days, mo=missed*avg;
+    $('v-avg').textContent=fmt(avg);
+    var gap=Math.max(0,cap-cur), missed=gap, mo=missed*avg;
     $('o-mo').textContent=fmt(mo);
     $('o-yr').textContent=fmt(mo*12);
-    $('o-math').textContent='('+cap+' - '+cur+' a day) × '+fmt(avg)+' × '+days+' days';
+    $('o-math').textContent='('+cap+' - '+cur+' a month) × '+fmt(avg);
     $('o-note').innerHTML='<b>'+missed+'</b> missed sales a month, on costs you already pay';
   }
-  ['r-cur','r-cap','r-avg','r-days'].forEach(function(id){
+  ['r-cur','r-cap','r-avg'].forEach(function(id){
     var el=$(id);
     el.addEventListener('input',function(){paint(el);sync(id);calc();document.querySelectorAll('.nudge,.dragme').forEach(function(n){n.classList.add('gone')})});
     paint(el);
