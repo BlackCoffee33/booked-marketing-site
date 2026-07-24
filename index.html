@@ -25,8 +25,8 @@
   --dur:.35s; --ease:cubic-bezier(.2,.8,.25,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
 img{max-width:100%}
 a{color:inherit}
 ::selection{background:var(--yellow);color:var(--ink)}
@@ -267,6 +267,8 @@ footer a:hover{text-decoration:underline}
 }
 @media(max-width:560px){
   section{padding:64px 0}
+  .under{white-space:normal}
+  .under::after{content:none}
   .nav{gap:12px}
   .nav .btn{font-size:11px;padding:8px 10px;letter-spacing:.02em}
   .logo{font-size:20px}
@@ -349,19 +351,21 @@ h1,h2,.d2,.logo,.co-big,.meter-g,.fstat .fn,.knum,.rule .num,.quote::before{font
 }
 
 
-/* proof stats */
-.proof{background:var(--ink);color:var(--white);text-align:center}
-.proof h2{color:var(--white)}
-.proof .lead{color:#B9C3D8}
-.pgrid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:44px;border-top:1px solid rgba(255,255,255,.14)}
-.pcell{padding:36px 28px 8px;border-left:1px solid rgba(255,255,255,.14)}
-.pcell:first-child{border-left:none}
-.pt{font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8E98AD;margin-bottom:12px}
-.pcell .pn{font-family:var(--display);font-weight:700;font-size:clamp(40px,4.5vw,56px);color:var(--yellow);line-height:1}
-.pcell .pk{font-size:14.5px;color:#EAF0FF;margin-top:12px;line-height:1.55}
-.pcell .ps{font-family:var(--mono);font-size:11px;color:#8E98AD;margin-top:14px;letter-spacing:.02em}
-@media(max-width:900px){.pgrid{grid-template-columns:1fr}.pcell{border-left:none;border-top:1px solid rgba(255,255,255,.14);padding:28px 12px 4px}.pcell:first-child{border-top:none}}
-
+/* proof stats: stat tickets on yellow */
+.proof{background:var(--yellow);color:var(--ink);border-bottom:3px solid var(--ink);text-align:center}
+.proof h2{color:var(--ink)}
+.proof .lead{color:#3A2F00}
+.kwhite{background:var(--white)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;max-width:1080px;margin-left:auto;margin-right:auto}
+.pcell{background:var(--white);border:3px solid var(--ink);border-radius:var(--r-md);box-shadow:var(--sh-card);padding:26px 22px 16px;display:flex;flex-direction:column;gap:8px;align-items:center}
+.pcell:nth-child(1){transform:rotate(-1.5deg)}
+.pcell:nth-child(2){transform:rotate(1.2deg)}
+.pcell:nth-child(3){transform:rotate(-1deg)}
+.pcell .pt{background:var(--yellow);border:2.5px solid var(--ink);border-radius:999px;padding:5px 14px;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+.pcell .pn{font-family:var(--display);font-weight:700;font-size:clamp(44px,4.5vw,58px);line-height:1;color:var(--blue);margin-top:6px}
+.pcell .pk{font-size:14.5px;color:#3A4358;line-height:1.5}
+.pcell .ps{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.02em;margin-top:auto;padding-top:12px;border-top:2px dashed var(--paper-line);width:100%}
+@media(max-width:900px){.pgrid{grid-template-columns:1fr;gap:20px}}
 
 /* bottom gift CTA */
 .gift{background:var(--yellow);border-bottom:3px solid var(--ink);text-align:center}
@@ -576,7 +580,7 @@ h1,h2,.d2,.logo,.co-big,.meter-g,.fstat .fn,.knum,.rule .num,.quote::before{font
 
   <section class="proof" id="proof">
     <div class="wrap" style="display:block">
-      <div class="kicker">Why ads win</div>
+      <div class="kicker kwhite">Why ads win</div>
       <h2>Ads aren't a cost. They're a <span class="under">multiplier</span></h2>
       <p class="lead">Not our numbers. Econometric studies across thousands of companies.</p>
       <div class="pgrid">
@@ -619,7 +623,6 @@ h1,h2,.d2,.logo,.co-big,.meter-g,.fstat .fn,.knum,.rule .num,.quote::before{font
   <section class="guar" id="guarantee">
     <div class="wrap">
       <div class="gseal" aria-hidden="true"><span class="gn">90</span><span class="gk">Day guarantee</span></div>
-      <div class="kicker">The guarantee</div>
       <h2>More revenue in 90 days, or we <span class="under">work free</span> until you get it</h2>
       <p class="lead">That's the whole deal. If your revenue is not up within 90 days of launch, <b>you stop paying and we keep working</b> until it is.</p>
     </div>
@@ -663,7 +666,7 @@ h1,h2,.d2,.logo,.co-big,.meter-g,.fstat .fn,.knum,.rule .num,.quote::before{font
           <div class="fstat"><div class="fn">100%</div><div class="fk">the only target we run</div></div>
         </div>
         <p><b>Sam Steffanina</b> was named <b>2023 Content Creator of the Year</b>, with over <b>7 billion organic views</b> on YouTube. That is a decade of winning attention at the highest level, scored in public every single day.</p>
-        <p><b>booked</b>.marketing points that skill at one job: <b>keeping your business at capacity</b>. Ads built by someone who knows exactly what makes people stop, trust, and buy, with the proof built in: graded accounts, spend caps enforced by software, and reports you can check against your own numbers.</p>
+        <p><b>booked</b>.marketing points that skill at one job: <b>keeping your business at capacity</b>. Ads built by someone who knows exactly what makes people stop, trust, and buy.</p>
         <p>If you're running below 100%, that's a marketing problem. We fix exactly that, and nothing else.</p>
       </div>
     </div>
